@@ -8,13 +8,15 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-
 export default function Home() {
+// Small intro, display fortune api here only? or as footer across whole portfolio?
+
+
     // const[shadow,setShadow] = useState()
     const useStyles = makeStyles({
         root: {
           minWidth: 275,
-          backgroundColor:'rgba(52, 52, 52, 0.1)',
+          // backgroundColor:'rgba(52, 52, 52, 0.1)',
           color: 'white',
           display:'flex',
           alignItems:'center',
