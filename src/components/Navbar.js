@@ -85,10 +85,10 @@ export default function Navbar() {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-          <Home value={value} index={0} dir={theme.direction}/>
+          <Home value={value} index={0} dir={theme.direction} setValue={setValue}/>
           <About  value={value} index={1} dir={theme.direction}/>
-          <Projects  value={value} index={3} dir={theme.direction}/>
-          <Contact value={value} index={2} dir={theme.direction}/>
+          <Projects  value={value} index={2} dir={theme.direction}/>
+          <Contact value={value} index={3} dir={theme.direction}/>
       </SwipeableViews>
     </div>
   );

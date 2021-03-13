@@ -27,11 +27,10 @@ export default function MediaCard() {
   return (
     <Card className={classes.root}>
       <CardActionArea >
-        <CardMedia
+        {/* <CardMedia
           className={classes.media}
-          image="../images/skyline.jpg"
           title="Contemplative Reptile"
-        />
+        /> */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Project Name
