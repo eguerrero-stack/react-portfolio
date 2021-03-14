@@ -17,15 +17,16 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
+//This page doesnt slide to the left because of some bug swipeable views has
 
 export default function Projects() {
   const classes = useStyles();
-  const projectInfo =[
-      {
-          name:"",
+  // const projectInfo =[
+  //     {
+  //         name:"",
           
-      }
-  ]
+  //     }
+  // ]
 
   return (
     <div className={classes.root}>

@@ -29,10 +29,10 @@ const classes = useStyles();
               <Typography>Want to get in contact? Reach out here!</Typography>
             <FormControl>
                 <div > 
-                <TextField className={classes.fields} required label="Required" />
-                <TextField className={classes.fields} required label="Required" />
+                <TextField className={classes.fields} required label="Name" />
+                <TextField className={classes.fields} required label="Phone Number" />
                 </div>
-                <TextField required label="Required" multiline rows={5} />
+                <TextField required label="Message" multiline rows={5} />
             </FormControl>
             </Card>
             </Paper>

@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     position: 'relative'
   },
+  label:{
+    fontWeight: 'bold'
+  }
 }));
 
 export default function Navbar() {
@@ -74,10 +77,10 @@ export default function Navbar() {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Home"/>
-          <Tab label="About"  />
-          <Tab label="Projects" />
-          <Tab label="Contact"  />
+          <Tab label={<span className={classes.label}>Home</span>}/>
+          <Tab label={<span className={classes.label}>About</span>}  />
+          <Tab label={<span className={classes.label}>Projects</span>} />
+          <Tab label={<span className={classes.label}>Contact</span>}  />
         </Tabs>
       </AppBar>
       <SwipeableViews

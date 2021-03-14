@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -6,8 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import CardMedia from '@material-ui/core/CardMedia';
-import HomeBg from "../images/homeBg.png"
+import Paper from '@material-ui/core/Paper';
 
 export default function Home({setValue}) {
 // Small intro, display fortune api here only? or as footer across whole portfolio?
@@ -18,7 +17,7 @@ export default function Home({setValue}) {
         root: {
           minWidth: 275,
           // backgroundColor:'rgba(52, 52, 52, 0.1)',
-          color: 'white',
+         
           display:'flex',
           alignItems:'center',
           justifyContent:'center',
@@ -33,27 +32,26 @@ export default function Home({setValue}) {
         },
         card:{
           // background: HomeBg,
-          backgroundColor:'rgba(71, 71, 71, 0.1)',
+          backgroundColor:'inherit',
           height:'100%',
-          width:'100%',
+          width:'90vw',
           boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-          paddingTop: '25em'
         },
         bullet: {
           display: 'inline-block',
           margin: '0 2px',
           transform: 'scale(0.8)',
-          color: 'white'
+          color: 'black'
       
         },
         title: {
           fontSize: 28,
-          color: 'white'
+          // color: 'white'
           
         },
         pos: {
           marginBottom: 12,
-          color: 'white',
+          // color: 'white',
           fontSize: 32,
         },
         subtitle:{
@@ -65,7 +63,7 @@ export default function Home({setValue}) {
     
   return (
       <div className={classes.root}>
-        
+       <Paper>
     <Card className={classes.card} variant="outlined" fontFamily="Monospace">
       <CardContent>
         <Typography className={classes.title} color="textSecondary"  gutterBottom>
@@ -83,9 +81,10 @@ export default function Home({setValue}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small"onClick={()=>setValue(1)}>Learn More</Button>
+        <Button variant="contained" color="primary" size="small"onClick={()=>setValue(1)}>Learn More</Button>
       </CardActions>
     </Card>
+    </Paper> 
     </div>
   );
 }
