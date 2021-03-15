@@ -1,0 +1,8 @@
+i:hover{
+    color:aqua,
+
+}
+.card:hover{
+    box-shadow: 0 10px 8px -4px black;
+
+}

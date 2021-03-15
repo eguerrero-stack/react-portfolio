@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 //This page doesnt slide to the left because of some bug swipeable views has
-
+//@ToDo loop through an array in State of the names, descriptions and links to the github for every project that is being used.
 export default function Projects() {
   const classes = useStyles();
   // const projectInfo =[

@@ -7,17 +7,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-
-export default function Home({setValue}) {
+import DevTitle from './DevTitle'
+export default function Home({setValue, value}) {
 // Small intro, display fortune api here only? or as footer across whole portfolio?
 
-
-    // const[shadow,setShadow] = useState()
+//@ToDo add a footer with icon links to LinkedIn and Github
     const useStyles = makeStyles({
         root: {
           minWidth: 275,
-          // backgroundColor:'rgba(52, 52, 52, 0.1)',
-         
           display:'flex',
           alignItems:'center',
           justifyContent:'center',
@@ -36,18 +33,18 @@ export default function Home({setValue}) {
           height:'100%',
           width:'90vw',
           boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'center'
         },
-        bullet: {
-          display: 'inline-block',
-          margin: '0 2px',
-          transform: 'scale(0.8)',
-          color: 'black'
-      
-        },
+        
         title: {
           fontSize: 28,
           // color: 'white'
           
+        },
+        paper:{
+          height:'60vh'
         },
         pos: {
           marginBottom: 12,
@@ -55,35 +52,31 @@ export default function Home({setValue}) {
           fontSize: 32,
         },
         subtitle:{
-          paddingTop: '10px'
+          paddingTop: '10px',
+          fontSize: '4rem'
         }
       });
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
     
   return (
       <div className={classes.root}>
-       <Paper>
+       <Paper className={classes.paper}>
     <Card className={classes.card} variant="outlined" fontFamily="Monospace">
       <CardContent>
         <Typography className={classes.title} color="textSecondary"  gutterBottom>
           Hi My Name Is
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Edward
+        <Typography className={classes.pos} color="textPrimary">
+          Edward Guerrero
         </Typography>
-        <Typography variant="body2" component="p">
+        <Typography variant="body2" component="h5">
           I am a 
           <br />
         </Typography>
-        <Typography className={classes.subtitle} variant="h5" component="h2">
-          Full{bull}Stack{bull}Developer
-        </Typography>
+        <DevTitle value={value}/>
       </CardContent>
-      <CardActions>
-        <Button variant="contained" color="primary" size="small"onClick={()=>setValue(1)}>Learn More</Button>
-      </CardActions>
     </Card>
+          <Button variant="contained" color="primary" size="large" onClick={()=>setValue(1)}>Learn More</Button>
     </Paper> 
     </div>
   );
