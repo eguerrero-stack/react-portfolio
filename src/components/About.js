@@ -20,21 +20,32 @@ const useStyles = makeStyles(({
       maxHeight:'30vh',
       maxWidth:'100%',
       objectFit: 'cover',
-      objectPosition: '50% 20%'
-
+      objectPosition: '50% 20%',
+      borderRadius: "100%"
+        
     }, 
     container:{
         height:'30vh',
         justifyContent:'center',
-        background: 'rgba(21,21,21, 0.9)',
+        // background: 'rgba(21,21,21, 0.9)',
     },
     
     card:{
-        background: 'rgba(21,21,21, 0.1)',
+        // background: 'rgba(21,21,21, 0.1)',
         "&:hover":{
             boxShadow: "0 10px 8px -4px black"
 
-        }
+        },
+        borderRadius: "100%",
+        padding: "10px",
+        borderColor: "black",
+        borderStyle:"solid",
+        borderWidth: "2px"
+    },
+    title:{
+        textAlign:"center",
+         color:"white",
+         paddingTop:"10px"
     }
 
   }));
@@ -45,14 +56,17 @@ export default function About() {
     
     return (
         <div className={classes.root}>
-            <div style={{textAlign:"center"}}>
+            {/* <div style={{textAlign:"center"}}>
                 <h1 style={{color:"white"}}>-About Me-</h1>
-            </div>
+            </div> */}
             <div>
+            <Typography className={classes.title} gutterBottom variant="h5" component="h2"  size="sm">
+                                  -About Me-
+            </Typography>
                 <Grid container className={classes.container} >
-                    <Grid item={true} xs={1} l={1}/>
+                    <Grid item xs={0} md={1} l={1}/>
                     
-                                    <Grid item={true} xs={2} l={4}>
+                                    <Grid item={true} xs={12} md={2} l={4}>
                                         <Card className={classes.card} >
                                              <CardMedia
                                                component="img"
@@ -62,9 +76,9 @@ export default function About() {
                                              />
                                         </Card>
                                     </Grid>
-                            <Grid item={true} xs={1} l={1}/>
+                            <Grid item={true} xs={0} md={1} l={1}/>
                              
-                                <Grid item={true} xs={6} >
+                                <Grid item={true} xs={12} md={6}>
                             <Card className={classes.aboutText}>
                                 <CardContent>
                                   <Typography gutterBottom variant="h5" component="h2">
@@ -84,12 +98,17 @@ export default function About() {
                                 </Grid>
                 </Grid>
             </div>
-            <div style={{textAlign:"center"}}>
-                <h1 style={{color:"white"}}>-Skills-</h1>
-            </div>
-            <div>
-                <Skills/>    
-            </div>
+            
+            <Typography gutterBottom variant="h5" component="h2" className={classes.title} size="sm">
+                                  -Skills-
+            </Typography>
+          
+            <Grid container>
+                <Grid item xs={12}>
+                    <Skills/>    
+                </Grid>
+            </Grid>
+          
         </div>
     )
 }

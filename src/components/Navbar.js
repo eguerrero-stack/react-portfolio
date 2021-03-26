@@ -43,13 +43,17 @@ import Home from './Home'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: 'rgba(52, 52, 52, 0.1)',
+    // backgroundColor: 'rgba(52, 52, 52, 0.1)',
+    
     width: '100vw',
     position: 'relative'
   },
   label:{
     fontWeight: 'bold'
-  }
+  },
+  // navBar:{
+  //   color:"#383838 !important"
+  // }
 }));
 
 export default function Navbar() {
@@ -68,7 +72,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" color="inherit">
         <Tabs
           value={value}
           onChange={handleChange}

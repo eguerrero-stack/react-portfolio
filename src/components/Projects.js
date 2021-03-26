@@ -9,7 +9,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display:'flex',
     height:'100%',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent:'center',
+    // maxWidth:'90vw'
   },
   paper: {
     padding: theme.spacing(1),
@@ -30,7 +32,7 @@ export default function Projects() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container >
         <Grid item xs={6} md={3} >
           <Paper className={classes.paper}>
               <ProjectCard/>

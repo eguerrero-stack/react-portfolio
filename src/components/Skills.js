@@ -5,13 +5,19 @@ import {Card,Grid} from '@material-ui/core';
 import './About.css'
 
 const useStyles = makeStyles((theme) => ({
+    root:{
+        height:"auto"
+    },
     border:{
-        border: '2px solid black'
+        border: 'none',
+        '@media (min-width:450px)':{
+            border: '2px solid black'
+        }
     },
     container:{
         height:'30vh',
         justifyContent:'center',
-        background: 'rgba(21,21,21, 0.9)',
+        // background: 'rgba(21,21,21, 0.9)',
     },
     card:{
         background:'inherit',
@@ -20,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     iconSection:{
-        fontSize: '2rem',
+        fontSize: '1.5rem',
         '@media (min-width:600px)':{
             fontSize: '4rem'
         },
@@ -41,6 +47,7 @@ export default function Skills() {
     const classes = useStyles();
 
     return (
+        <div className={classes.root}>
         <Grid container  className={classes.container}>
                         <Grid item xs={12} md={6} className={classes.iconSection}>
                             <Card className={`${classes.card} card ${classes.border}`} > 
@@ -81,5 +88,6 @@ export default function Skills() {
                             </Card>
                         </Grid>
                      </Grid>
+         </div>
     )
 }
