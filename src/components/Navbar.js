@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: 'rgba(52, 52, 52, 0.1)',
     
     width: '100vw',
-    position: 'relative'
+    position: 'fixed'
   },
   label:{
     fontWeight: 'bold'

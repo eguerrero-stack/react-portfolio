@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     container:{
-        height:'30vh',
+        
         justifyContent:'center',
-        // background: 'rgba(21,21,21, 0.9)',
+        
     },
     card:{
         background:'inherit',

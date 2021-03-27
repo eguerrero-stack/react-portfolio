@@ -1,14 +1,16 @@
 import React,{useState} from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import {Card, CardContent, CardMedia, Grid, Typography} from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+
 import Skills from './Skills'
 import profile from "../images/profile.jpg"
 import './About.css'
 
-const useStyles = makeStyles(({
+const useStyles = makeStyles(theme =>({
     root: {
       height:'auto',
-
+        margin:'10px'
     },
     aboutText:{
         height:'20vh',
@@ -21,11 +23,11 @@ const useStyles = makeStyles(({
       maxWidth:'100%',
       objectFit: 'cover',
       objectPosition: '50% 20%',
-      borderRadius: "100%"
+    //   borderRadius: "100%"
         
     }, 
     container:{
-        height:'30vh',
+        // height:'30vh',
         justifyContent:'center',
         // background: 'rgba(21,21,21, 0.9)',
     },
@@ -36,7 +38,7 @@ const useStyles = makeStyles(({
             boxShadow: "0 10px 8px -4px black"
 
         },
-        borderRadius: "100%",
+        // borderRadius: "100%",
         padding: "10px",
         borderColor: "black",
         borderStyle:"solid",
@@ -46,6 +48,11 @@ const useStyles = makeStyles(({
         textAlign:"center",
          color:"white",
          paddingTop:"10px"
+    },
+    font:{
+        [theme.breakpoints.down('xs')]:{
+            fontSize:"1.2rem"
+          },
     }
 
   }));
@@ -81,16 +88,16 @@ export default function About() {
                                 <Grid item={true} xs={12} md={6}>
                             <Card className={classes.aboutText}>
                                 <CardContent>
-                                  <Typography gutterBottom variant="h5" component="h2">
+                                  <Typography className={classes.font} gutterBottom variant="h5" component="h2">
                                   I am a Full Stack Software developer based in Orange County, California.
                                   </Typography>
-                                  <Typography variant="h4" color="textSecondary" component="h3">
+                                  <Typography className={classes.font} variant="h4" color="textSecondary" component="h3">
                                     I build websites.
                                   </Typography>
-                                  <Typography gutterBottom variant="h5" component="h2">
+                                  <Typography className={classes.font} gutterBottom variant="h5" component="h2">
                                   1% better everyday
                                   </Typography>
-                                  <Typography variant="h4" color="textSecondary" component="h3">
+                                  <Typography className={classes.font} variant="h4" color="textSecondary" component="h3">
                                     I am a creator.
                                   </Typography>
                                 </CardContent>
@@ -98,11 +105,11 @@ export default function About() {
                                 </Grid>
                 </Grid>
             </div>
-            
+            <div style={{paddingTop:"10px"}}>
             <Typography gutterBottom variant="h5" component="h2" className={classes.title} size="sm">
                                   -Skills-
             </Typography>
-          
+            </div>
             <Grid container>
                 <Grid item xs={12}>
                     <Skills/>    

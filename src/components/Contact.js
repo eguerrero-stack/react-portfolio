@@ -13,7 +13,8 @@ export default function Contact() {
         alignItems:'center',
         justifyContent:'center',
         height:'100%',
-        display:'flex'
+        display:'flex',
+        margin:'10px'
      },
      fields:{
          margin: theme.spacing(1)

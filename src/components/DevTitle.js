@@ -1,19 +1,20 @@
 import React,{useState,useEffect} from 'react'
 import {Typography} from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import {ThemeProvider} from '@material-ui/core/styles'
 
 export default function DevTitle({value}) {
     //@ToDo have the loop be clickable
     //
   const [titles,setTitles] = useState([
     {name:'Full Stack',
-    color:'red'},
+    color:'primary'},
    {name:'Front End',
-    color:'purple'},
+    color:'secondary'},
    {name:'Back End',
-  color:'deepPurple'},
+  color:'primary'},
     {name:'React',
-  color:'blue'},
+  color:'secondary'},
      {name:'.Net',
     color:'primary'},
       {name:'Node',
@@ -60,12 +61,24 @@ useEffect(()=>{
 
     const classes = useStyles();
     // const bull = <span className={classes.bullet}>•</span>;
-
+    const theme = createMuiTheme({
+      palette:{
+        primary:{
+          main: "#43C6DB"
+        },
+        secondary:{
+          main: "#DB5844"
+        }
+      }
+    })
     return (
         <>
+        <ThemeProvider theme={theme}>
             <Typography className={classes.subtitle} color={titles[index].color} component="h2">
                 {titles[index].name} Developer
             </Typography>
+          </ThemeProvider>
+
         </>
     )
 }
