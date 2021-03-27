@@ -3,7 +3,7 @@ import { makeStyles,createMuiTheme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ProjectCard from './ProjectCard';
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,12 +23,14 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     justifyContent:'center',
     alignContent:'center',
+    height:'80%', 
+
   },
   paper: {
     [theme.breakpoints.up('md')]:{
       width: '50%',
       fontSize:'0.8em'
-    },    
+    },   
     fontSize:'0.3em',
     padding: theme.spacing(1),
     margin: theme.spacing(1),
@@ -68,6 +70,7 @@ export default function Projects() {
 
   return (
     <div className={classes.root}>
+      
       <Grid container >
         {projectInfo.map((p,index) => {
         return  (<Grid item xs={12} sm={6} key={index} className={classes.grid}>

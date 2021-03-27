@@ -13,8 +13,9 @@ const useStyles = makeStyles(theme =>({
         margin:'10px'
     },
     aboutText:{
-        height:'20vh',
-        "@media (min-width:370px)":{
+        padding:'10px',
+        // height:'20vh',
+        "@media (min-width:1500px)":{
             height:'30vh'
         }
     },
@@ -23,26 +24,20 @@ const useStyles = makeStyles(theme =>({
       maxWidth:'100%',
       objectFit: 'cover',
       objectPosition: '50% 20%',
-    //   borderRadius: "100%"
-        
     }, 
     container:{
         // height:'30vh',
         justifyContent:'center',
-        // background: 'rgba(21,21,21, 0.9)',
     },
     
     card:{
-        // background: 'rgba(21,21,21, 0.1)',
         "&:hover":{
             boxShadow: "0 10px 8px -4px black"
-
-        },
-        // borderRadius: "100%",
+        },  
         padding: "10px",
-        borderColor: "black",
-        borderStyle:"solid",
-        borderWidth: "2px"
+        [theme.breakpoints.down('xs')]:{
+            margin:"10px"
+          },
     },
     title:{
         textAlign:"center",
@@ -51,7 +46,7 @@ const useStyles = makeStyles(theme =>({
     },
     font:{
         [theme.breakpoints.down('xs')]:{
-            fontSize:"1.2rem"
+            fontSize:"1rem"
           },
     }
 
@@ -73,7 +68,7 @@ export default function About() {
                 <Grid container className={classes.container} >
                     <Grid item xs={0} md={1} l={1}/>
                     
-                                    <Grid item={true} xs={12} md={2} l={4}>
+                                    <Grid item={true} xs={6} sm={6} md={2} l={4}>
                                         <Card className={classes.card} >
                                              <CardMedia
                                                component="img"
@@ -110,12 +105,13 @@ export default function About() {
                                   -Skills-
             </Typography>
             </div>
+           
             <Grid container>
                 <Grid item xs={12}>
                     <Skills/>    
                 </Grid>
             </Grid>
-          
+            
         </div>
     )
 }

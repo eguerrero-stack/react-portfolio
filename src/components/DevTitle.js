@@ -32,7 +32,7 @@ useEffect(()=>{
       changeTitles(i);
     }
   }
-},[])
+},[value])
 
 
   let changeTitles = (i) => {

@@ -1,14 +1,8 @@
 .background {
-  /* background: url("../images/skyline.jpg"); */
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1; */
   min-width: 100vw;
   min-height: 100vh;
-  /* max-height: 100vh; */
   top: 0%;
   position: absolute;
-  /* background-color: rgb(20, 20, 20); */
   background: linear-gradient(
     to right,
     rgb(15, 12, 41),

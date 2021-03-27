@@ -14,10 +14,8 @@ const useStyles = makeStyles((theme) => ({
             border: '2px solid black'
         }
     },
-    container:{
-        
-        justifyContent:'center',
-        
+    container:{   
+        justifyContent:'center',  
     },
     card:{
         background:'inherit',
@@ -31,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '4rem'
         },
         '@media (min-width:1700px)':{
-            fontSize: '7rem'
+            fontSize: '7rem',
+            paddingTop: '100px'
         },
         display:'flex',
         justifyContent: 'center',
@@ -39,7 +38,11 @@ const useStyles = makeStyles((theme) => ({
         
     },
     icon:{
-        margin: theme.spacing(2)
+        [theme.breakpoints.up('sm')]:{
+            margin: theme.spacing(2),
+            
+          },
+        padding:theme.spacing(1)
     },
 }))
 
@@ -49,7 +52,7 @@ export default function Skills() {
     return (
         <div className={classes.root}>
         <Grid container  className={classes.container}>
-                        <Grid item xs={12} md={6} className={classes.iconSection}>
+                        <Grid item xs={12} sm={12} md={6} className={classes.iconSection}>
                             <Card className={`${classes.card} card ${classes.border}`} > 
                                 <i  data-toggle="tooltip" title="Javascript" className={`${classes.icon} devicon-javascript-plain`}/>
                             </Card>
@@ -70,7 +73,7 @@ export default function Skills() {
                        {/*
                         Middle 
                        */}
-                        <Grid item xs={12} md={6} className={classes.iconSection}>
+                        <Grid item xs={12} sm={12} md={6} className={classes.iconSection}>
                             <Card className={`${classes.card} card ${classes.border}`} > 
                                 <i data-toggle="tooltip" title="C#" className={`${classes.icon} devicon-csharp-plain`}></i>
                             </Card>

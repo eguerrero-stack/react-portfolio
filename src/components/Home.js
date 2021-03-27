@@ -7,13 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import Background from "../images/homeBackground.jpg"
+import Background from "../images/overlookingCity.png"
 import DevTitle from './DevTitle'
 export default function Home({setValue, value}) {
 // Small intro, display fortune api here only? or as footer across whole portfolio?
 
 //@ToDo add a footer with icon links to LinkedIn and Github
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme=>({
         root: {
           minWidth: 275,
           display:'flex',
@@ -34,9 +34,13 @@ export default function Home({setValue, value}) {
           backgroundPosition:"50% 50%",
           backgroundImage:`url(${Background})`,
           height:'100%',
-          width:'90vw',
+          width: '35vw',
           position: "relative",
-          filter: "blur(2px)"
+          [theme.breakpoints.down('xs')]:{
+            width:'90vw',
+           
+          },
+          // filter: "blur(1px)"
         },
         content:{
           position:"absolute",
@@ -46,7 +50,7 @@ export default function Home({setValue, value}) {
         },
         title: {
           fontSize: 28,
-          // color: 'white'
+          color: 'white',
           filter:"none"
           
         },
@@ -59,14 +63,14 @@ export default function Home({setValue, value}) {
         },
         pos: {
           marginBottom: 12,
-          // color: 'white',
+          color: 'white',
           fontSize: 32,
         },
         subtitle:{
           paddingTop: '10px',
           fontSize: '4rem'
         }
-      });
+      }));
     const classes = useStyles();
     
   return (
@@ -76,12 +80,12 @@ export default function Home({setValue, value}) {
     </Card>
       <CardContent className={classes.content}>
         <Typography className={classes.title} color="textSecondary"  gutterBottom>
-          Hi My Name Is
+          My Name Is
         </Typography>
         <Typography className={classes.pos} color="textPrimary" variant="h1">
           Edward Guerrero
         </Typography>
-        <Typography variant="body1" component="h5">
+        <Typography className={classes.title} variant="body1" color="textSecondary" component="h5">
           I am a 
           <br />
         </Typography>
