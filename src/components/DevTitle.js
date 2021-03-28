@@ -4,8 +4,6 @@ import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/core/styles'
 
 export default function DevTitle({value}) {
-    //@ToDo have the loop be clickable
-    //
   const [titles,setTitles] = useState([
     {name:'Full Stack',
     color:'primary'},
@@ -22,12 +20,11 @@ export default function DevTitle({value}) {
        {name:'Software',
       color:'primary'}]);
   const [index,setIndex] =useState(0)
+  const [isLooping, setIsLooping] = useState(false)
   
 useEffect(()=>{
-  // if(titles !== typeof Array) return
-  console.log('titles',titles)
-  console.log('values', value)
-  if(value===0){
+  if(value===0 && !isLooping){
+    setIsLooping(true);
     for(let i =0; i < titles.length; i++){
       changeTitles(i);
     }
@@ -37,34 +34,37 @@ useEffect(()=>{
 
   let changeTitles = (i) => {
     setTimeout(()=>{
-    console.log('setting new index', titles[i])
     if(index < titles.length){
       setIndex(i)
+      if(titles[i].name === "Software"){
+        setIsLooping(false)
+      }
     }
   },2000 * (i + 1))
 
   }
 
-  const useStyles = makeStyles({
-        bullet: {
-            display: 'inline-block',
-            margin: '0 2px',
-            transform: 'scale(0.8)',
-            color: 'black'
-        
-          },
-        subtitle:{
+  const useStyles = makeStyles(theme =>({
+        title:{
           paddingTop: '10px',
-          fontSize: '4rem'
+          fontSize: '5rem',
+          [theme.breakpoints.down("sm")]:{
+            fontSize: '4rem'
+          }
+        },
+        subTitle:{
+          fontSize:'3rem',
+          color:"white"
         }
-      });
+      }));
 
     const classes = useStyles();
-    // const bull = <span className={classes.bullet}>•</span>;
+
     const theme = createMuiTheme({
       palette:{
         primary:{
-          main: "#43C6DB"
+          main: "#43C6DB",
+          secondary: "white"
         },
         secondary:{
           main: "#DB5844"
@@ -74,9 +74,10 @@ useEffect(()=>{
     return (
         <>
         <ThemeProvider theme={theme}>
-            <Typography className={classes.subtitle} color={titles[index].color} component="h2">
-                {titles[index].name} Developer
+            <Typography className={classes.title} color={titles[index].color} component="h2">
+                <strong>{titles[index].name} </strong>
             </Typography>
+            <h2 className={classes.subTitle} >Developer</h2>
           </ThemeProvider>
 
         </>

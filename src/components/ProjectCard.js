@@ -9,6 +9,9 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Img from '../images/skyline.jpg'
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LanguageIcon from '@material-ui/icons/Language';
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: 'auto',
@@ -30,8 +33,8 @@ const useStyles = makeStyles(theme => ({
 export default function ProjectCard({name, description,gitUrl}) {
   const classes = useStyles();
   const theme = useTheme();
-  const sizing = useMediaQuery(theme.breakpoints.down('xs'))
-  console.log(sizing)
+  // const sizing = useMediaQuery(theme.breakpoints.down('xs'))
+  // console.log(sizing)
   return (
     <Card className={classes.root}>
       <CardActionArea >
@@ -54,10 +57,10 @@ export default function ProjectCard({name, description,gitUrl}) {
       </CardActionArea>
       <CardActions className={classes.cardActions}>
         <Button size="small" variant="contained" color="primary">
-          Website
+          <LanguageIcon/>
         </Button>
         <Button size="small" variant="contained" color="primary" href={gitUrl} >
-          Github
+          <GitHubIcon/>
         </Button>
       </CardActions>
     </Card>

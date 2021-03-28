@@ -1,9 +1,8 @@
 import React from 'react';
-import { makeStyles,createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ProjectCard from './ProjectCard';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,9 +14,9 @@ const useStyles = makeStyles((theme) => ({
       maxHeight:'90vh',
     },
     
-    [theme.breakpoints.up('sm')]:{
-      display: 'flex'
-    },
+    // [theme.breakpoints.up('sm')]:{
+    //   display: 'flex'
+    // },
   },
   grid:{
     display:'flex',
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     [theme.breakpoints.up('md')]:{
-      width: '50%',
+      width: '45%',
       fontSize:'0.8em'
     },   
     fontSize:'0.3em',

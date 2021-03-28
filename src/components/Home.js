@@ -9,6 +9,9 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Background from "../images/overlookingCity.png"
 import DevTitle from './DevTitle'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 export default function Home({setValue, value}) {
 // Small intro, display fortune api here only? or as footer across whole portfolio?
 
@@ -16,12 +19,13 @@ export default function Home({setValue, value}) {
     const useStyles = makeStyles(theme=>({
         root: {
           minWidth: 275,
-          display:'flex',
+          // display:'flex',
           alignItems:'center',
           justifyContent:'center',
-          height:'90vh',
+          // height:'90vh',
           overflow:'hidden',
-          textAlign:'center',          
+          // textAlign:'center',  
+                 
         },
         media:{
           minHeight:'20vh',
@@ -30,21 +34,28 @@ export default function Home({setValue, value}) {
         card:{
           backgroundRepeat:"no-repeat",
           backgroundAttachment:"fixed",
-          backgroundSize:"contain",
-          backgroundPosition:"50% 50%",
+          backgroundSize:"cover",
+          backgroundPosition:"50% 65%",
           backgroundImage:`url(${Background})`,
           height:'100%',
-          width: '35vw',
+          width: '100vw',
           position: "relative",
+          opacity:"0.9",
           [theme.breakpoints.down('xs')]:{
-            width:'90vw',
+            // width:'90vw',
+          backgroundPosition:"60% 50%",
+          filter: "none",
            
           },
-          // filter: "blur(1px)"
+          filter: "blur(1px)"
         },
         content:{
           position:"absolute",
+          paddingTop: "100px",
+          [theme.breakpoints.down('xs')]:{
+
           paddingTop:"25px",
+          }
         // background: 'rgba(21,21,21, 0.1)',
 
         },
@@ -55,10 +66,11 @@ export default function Home({setValue, value}) {
           
         },
         paper:{
-          height:'60vh',
+          height:'55vh',
           textAlign:"center",
           justifyContent:"center",
-          display:"flex"
+          display:"flex",
+          backgroundColor:"black" 
 
         },
         pos: {
@@ -69,30 +81,50 @@ export default function Home({setValue, value}) {
         subtitle:{
           paddingTop: '10px',
           fontSize: '4rem'
+        },
+        btn:{
+          color:'black',
+          backgroundColor: 'white',
+          
+        },
+        btnContainer:{
+          marginTop: '20px',
+          textAlign:'center',
+        },
+        socialIcon:{
+          color:'black',
+          margin:'5px'
         }
       }));
     const classes = useStyles();
     
   return (
       <div className={classes.root}>
-       <Paper className={classes.paper} >
-    <Card className={classes.card} variant="outlined" fontFamily="Monospace">
-    </Card>
-      <CardContent className={classes.content}>
-        <Typography className={classes.title} color="textSecondary"  gutterBottom>
-          My Name Is
-        </Typography>
-        <Typography className={classes.pos} color="textPrimary" variant="h1">
-          Edward Guerrero
-        </Typography>
-        <Typography className={classes.title} variant="body1" color="textSecondary" component="h5">
-          I am a 
-          <br />
-        </Typography>
-        <DevTitle value={value}/>
-          <Button variant="contained" color="primary" size="large" onClick={()=>setValue(1)}>Learn More</Button>
-      </CardContent>
-    </Paper> 
+               <Paper className={classes.paper} >
+            <Card className={classes.card} variant="outlined" fontFamily="Monospace">
+            </Card>
+              <CardContent className={classes.content}>
+                <Typography className={classes.title} color="textSecondary"  gutterBottom>
+                  My Name Is
+                </Typography>
+                <Typography className={classes.pos} color="textPrimary" variant="h1">
+                  Edward Guerrero
+                </Typography>
+                <Typography className={classes.title} variant="body1" color="textSecondary" component="h5">
+                  I am a 
+                  <br />
+                </Typography>
+                <DevTitle value={value}/>
+              </CardContent>
+            </Paper> 
+        <div className={classes.btnContainer}>
+          <Button variant="contained" className={classes.btn} size="large" onClick={()=>setValue(1)}>Learn More<ArrowForwardIcon/></Button>
+        </div>
+        <div style={{textAlign:'center'}}>
+              <p>____________________</p>
+              <a className={classes.socialIcon} href="https://www.linkedin.com/in/edward-guerrero/"><LinkedInIcon/></a>
+              <a className={classes.socialIcon} href="https://github.com/eguerrero-stack/"><GitHubIcon/></a>
+        </div>
     </div>
   );
 }

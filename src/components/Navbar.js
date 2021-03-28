@@ -8,52 +8,26 @@ import About from './About'
 import Contact from './Contact'
 import Projects from './Projects'
 import Home from './Home'
-// function TabPanel(props) {
-//   const { children, value, index, ...other } = props;
-
-//   return (
-//     <div
-//       role="tabpanel"
-//       hidden={value !== index}
-//       id={`full-width-tabpanel-${index}`}
-//       aria-labelledby={`full-width-tab-${index}`}
-//       {...other}
-//     >
-//       {value === index && (
-//         <Box p={3}>
-//           <Typography>{children}</Typography>
-//         </Box>
-//       )}
-//     </div>
-//   );
-// }
-
-// TabPanel.propTypes = {
-//   children: PropTypes.node,
-//   index: PropTypes.any.isRequired,
-//   value: PropTypes.any.isRequired,
-// };
-
-// function a11yProps(index) {
-//   return {
-//     id: `full-width-tab-${index}`,
-//     'aria-controls': `full-width-tabpanel-${index}`,
-//   };
-// }
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: 'rgba(52, 52, 52, 0.1)',
+    // backgroundColor: 'red',
     
     width: '100vw',
     position: 'fixed'
   },
   label:{
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color:"white",
+    [theme.breakpoints.up("sm")]:{
+      fontSize:"1.2em"
+
+    }
   },
-  // navBar:{
-  //   color:"#383838 !important"
-  // }
+  navBar:{
+    backgroundColor: '#202020',
+    color: "white",
+  }
 }));
 
 export default function Navbar() {
@@ -72,7 +46,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="inherit">
+      <AppBar position="static" color="inherit"className={classes.navBar}>
         <Tabs
           value={value}
           onChange={handleChange}

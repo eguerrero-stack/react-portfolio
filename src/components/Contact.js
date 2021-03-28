@@ -26,7 +26,8 @@ export default function Contact() {
      },
      card:{
        margin: theme.spacing(2),
-       height: '50vh'
+       padding: theme.spacing(1),
+      //  height: '50vh'
      }
  }))
 const classes = useStyles();
@@ -41,7 +42,7 @@ const classes = useStyles();
                       <TextField className={classes.fields} required label="Phone Number" />
                 </div>
                 <TextField required label="Message" multiline rows={10} style={{paddingTop:'20px'}}/>
-            <Button style={{marginTop:'10px'}} variant="outlined"color="primary">Send</Button>
+            <Button  variant="outlined"color="primary" onClick={()=> console.log('hello im here')}>Send</Button>
             </FormControl>
             </Card>
             </Paper>

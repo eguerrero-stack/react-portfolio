@@ -1,7 +1,6 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { makeStyles} from '@material-ui/core/styles';
 import {Card, CardContent, CardMedia, Grid, Typography} from '@material-ui/core';
-import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import Skills from './Skills'
 import profile from "../images/profile.jpg"
@@ -24,6 +23,7 @@ const useStyles = makeStyles(theme =>({
       maxWidth:'100%',
       objectFit: 'cover',
       objectPosition: '50% 20%',
+      borderRadius:'10%'
     }, 
     container:{
         // height:'30vh',
@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme =>({
     },
     
     card:{
+        borderRadius:'10%',
         "&:hover":{
             boxShadow: "0 10px 8px -4px black"
         },  
@@ -66,7 +67,7 @@ export default function About() {
                                   -About Me-
             </Typography>
                 <Grid container className={classes.container} >
-                    <Grid item xs={0} md={1} l={1}/>
+                    <Grid item  md={1} l={1}/>
                     
                                     <Grid item={true} xs={6} sm={6} md={2} l={4}>
                                         <Card className={classes.card} >
@@ -78,7 +79,7 @@ export default function About() {
                                              />
                                         </Card>
                                     </Grid>
-                            <Grid item={true} xs={0} md={1} l={1}/>
+                            <Grid item={true}  md={1} l={1}/>
                              
                                 <Grid item={true} xs={12} md={6}>
                             <Card className={classes.aboutText}>
@@ -87,10 +88,10 @@ export default function About() {
                                   I am a Full Stack Software developer based in Orange County, California.
                                   </Typography>
                                   <Typography className={classes.font} variant="h4" color="textSecondary" component="h3">
-                                    I build websites.
+                                    Websites are my thing but gaming has my heart.
                                   </Typography>
                                   <Typography className={classes.font} gutterBottom variant="h5" component="h2">
-                                  1% better everyday
+                                  I am a believer of 1% better everyday.
                                   </Typography>
                                   <Typography className={classes.font} variant="h4" color="textSecondary" component="h3">
                                     I am a creator.
