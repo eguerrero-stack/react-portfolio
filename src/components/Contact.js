@@ -8,10 +8,11 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
+
 export default function Contact() {
   //@Todo add email functionality
   //Would be cool to have address and icon, phone number and icon, email and icon above the form.
-  // Working on consuming api and sending form, current problem is being blocked by CORS policy.
+  
 
 
 
@@ -44,12 +45,11 @@ export default function Contact() {
 const classes = useStyles();
 
 const sendMail = (data) =>{
-  console.log('sending mail')
-  fetch('http://localhost:5000/',{
+  console.log('sending mail',data)
+  fetch('http://localhost:5000/send',{
     method:'POST',
-    mode:'cors',
     body: JSON.stringify(data),
-    // headers:{"Content-type" : "application/json; charset=UTF-8"}
+    headers:{"Content-type" : "application/json"}
   })
   .then(res => res.json())
   .then(res => console.log(res))
@@ -57,11 +57,13 @@ const sendMail = (data) =>{
 }
 
 const setupEmail =(name,email,message) =>{
+
   const mailObj ={
     name,
     email,
     message,
   }
+  
   sendMail(mailObj)
 }
 
