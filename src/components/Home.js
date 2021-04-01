@@ -2,7 +2,6 @@ import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -13,9 +12,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 export default function Home({setValue, value}) {
-// Small intro, display fortune api here only? or as footer across whole portfolio?
 
-//@ToDo add a footer with icon links to LinkedIn and Github
     const useStyles = makeStyles(theme=>({
         root: {
           minWidth: 275,
@@ -42,7 +39,6 @@ export default function Home({setValue, value}) {
           position: "relative",
           opacity:"0.9",
           [theme.breakpoints.down('xs')]:{
-            // width:'90vw',
           backgroundPosition:"60% 50%",
           filter: "none",
            
@@ -56,7 +52,6 @@ export default function Home({setValue, value}) {
 
           paddingTop:"25px",
           }
-        // background: 'rgba(21,21,21, 0.1)',
 
         },
         title: {
@@ -88,7 +83,7 @@ export default function Home({setValue, value}) {
           
         },
         btnContainer:{
-          marginTop: '20px',
+          marginTop: '100px',
           textAlign:'center',
         },
         socialIcon:{
@@ -117,13 +112,15 @@ export default function Home({setValue, value}) {
                 <DevTitle value={value}/>
               </CardContent>
             </Paper> 
+            <div>
         <div className={classes.btnContainer}>
-          <Button variant="contained" className={classes.btn} size="large" onClick={()=>setValue(1)}>Learn More<ArrowForwardIcon/></Button>
-        </div>
-        <div style={{textAlign:'center'}}>
-              <p>____________________</p>
-              <a className={classes.socialIcon} href="https://www.linkedin.com/in/edward-guerrero/"><LinkedInIcon/></a>
-              <a className={classes.socialIcon} href="https://github.com/eguerrero-stack/"><GitHubIcon/></a>
+            <Button variant="contained" className={classes.btn} size="large" onClick={()=>setValue(1)}>Learn More<ArrowForwardIcon/></Button>
+          </div>
+          <div style={{textAlign:'center'}}>
+                <p>____________________</p>
+                <a className={classes.socialIcon} href="https://www.linkedin.com/in/edward-guerrero/"><LinkedInIcon/></a>
+                <a className={classes.socialIcon} href="https://github.com/eguerrero-stack/"><GitHubIcon/></a>
+          </div>
         </div>
     </div>
   );
