@@ -4,18 +4,7 @@ const port = process.env.port || 5000;
 const app = express();
 const cors = require('cors');
 const sendMail = require('./mailer')
-/*@todo find free smtp server to use
-The process would be to call the email service on form submit
-Compile the email object and send it to api
-Alert user if mail was sent (tiny little bookmark in corner of page would be perfect)
-Clear fields
 
-
-//this right here  is inside of nodemailer create transport options
-tls:{
-    rejectUnauthorized:false for using email service in localhost..maybe?
-}
-*/
 app.use(cors());
 //parses json, otherwise throws error that there is an unexpected end of input
 app.use(express.json())

@@ -74,7 +74,7 @@ const setupEmail =(name,email,message) =>{
             <Card className={classes.card}>
               <Typography variant="h4">Let's Connect!</Typography>
             <FormControl >
-                <div > 
+                <div style={{display:'flex'}} > 
                     <TextField className={classes.fields} required label="Name" onChange={e =>setName(e.target.value)} value={name}/>
                       <TextField className={classes.fields} label="Email"  onChange={e => setEmail(e.target.value)} value={email}/>
                 </div>
